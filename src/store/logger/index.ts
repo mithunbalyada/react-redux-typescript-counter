@@ -1,10 +1,10 @@
-import { MiddlewareAPI } from "redux";
+import { MiddlewareAPI, Middleware } from "redux";
 import {CounterActions} from '../counter/types';
 import { Dispatch } from "react";
 
 
 
-const logger = (store: MiddlewareAPI) => (next: Dispatch<CounterActions>) => (action: CounterActions) => {
+const logger: Middleware = (store: MiddlewareAPI) => (next: Dispatch<CounterActions>) => (action: CounterActions) => {
         console.log('logger: Dispatching ', action);
         const result = next(action);
         console.log('logger: next state', store.getState());
