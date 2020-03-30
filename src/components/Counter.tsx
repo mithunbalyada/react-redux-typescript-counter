@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { ICounterState } from '../store/counter/types';
 import { Dispatch } from 'redux';
 import {connect} from 'react-redux';
 import { addToCounter, subtractFromCounter } from '../store/counter/actions';
